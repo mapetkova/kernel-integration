@@ -8,7 +8,7 @@
 #include <iostream>
 #include <math.h>
 
-double full_integral(double phi, double r0, double R_0, double h);
+double vertex_integral(double phi, double r0, double R_0, double h);
 
 int main() {
   double phi, r0, R_0, h;
@@ -21,13 +21,13 @@ int main() {
   phi=M_PI/4.0;
 
   /**
-   * full_integral(phi, r0, R_0, h) is the expression evaluated at each vertex due to symmetry.
+   * vertex_integral(phi, r0, R_0, h) is the expression evaluated at each vertex due to symmetry.
    * We multiply it by 2 because each edge contains 2 vertices.
    * We multiply it further by 4 because each face has 4 edges.
    * We multiply it further by 6 because a cube has 6 faces.
    */
   printf("A cube with side %g times h, and with an SPH particle at its centre\n", cell_size/h);
-  printf("encloses the following fraction of the mass of the particle: %g\n", 6*4*2*full_integral(phi, r0, R_0, h));
+  printf("encloses the following fraction of the mass of the particle: %g\n", 6*4*2*vertex_integral(phi, r0, R_0, h));
 
   return 0;
 }
@@ -43,7 +43,7 @@ int main() {
  * onto the face of the cell to a side of the face (containing the vertex).
  * h: The kernel smoothing length of the particle.
  */
-double full_integral(double phi, double r0, double R_0, double h) {
+double vertex_integral(double phi, double r0, double R_0, double h) {
 
   double B1, B2, B3, mu, a, logs, u;
   double full_int;
