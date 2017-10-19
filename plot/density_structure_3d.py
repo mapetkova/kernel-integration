@@ -4,7 +4,7 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 
-fname = '/Users/Maya/Documents/GitHub/kernel-integration/src/for_3d_plotting.dat'
+fname = '../src/for_3d_plotting.dat'
 
 f = open(fname)
 
@@ -42,7 +42,7 @@ while ind!=0 :
     ax.tick_params(axis='both', which='major', labelsize=15)
     ax.set_aspect('equal','box')
 
-plt.savefig("/Users/Maya/Documents/GitHub/kernel-integration/plot/density-3d-50.pdf",format="pdf")
+plt.savefig("density-3d-50.pdf",format="pdf")
 
 f.close()
 
