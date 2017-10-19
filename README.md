@@ -6,6 +6,6 @@ The Voronoi grid is constructed using the free library Voro++ which can be downl
 # How to use this code?
 The best place to start is src/cell_density.cc. This simple program introduces the vertex integral function which is the final product of the derivation presented in Petkova et al.
 
-The next program to review is src/single_particle_voronoi_density.cc which applies the vertex integral function to a Voronoi grid. This setup uses one SPH particle which is mapped onto 50 cells.The vertex integral is calculated for each vertex of each edge of each face of a cell and these calculations are added up to produce the mass of the cell. The density of each cell (cell mass divided by cell volume) can be viewed in 3D using plot/density_structure_3d.py, by plotting the Voronoi polyhedra with transparency set as the cell density.
+The next program to review is src/single_particle_voronoi_density.cc which applies the vertex integral function to a Voronoi grid. This setup uses one SPH particle which is mapped onto 50 cells. The vertex integral is calculated for each vertex of each edge of each face of a cell and these calculations are added up to produce the mass of the cell. The density of each cell (cell mass divided by cell volume) can be viewed in 3D using plot/density_structure_3d.py, by plotting the Voronoi polyhedra with transparency set as the cell density.
 
 A further program will be added soon to show the mapping of multiple SPH particles onto a Voronoi grid.
